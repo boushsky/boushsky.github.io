@@ -119,13 +119,11 @@
       </div>
         <script>
             $.get("project_data.js",function(response){
-               
                var userData = response.results;
                console.log(userData);
                $.each(userData,function(i,v){
                    var clone = $("#template").clone();
                    
-                   //clone.find(".card .card-header").text(v.name);
                    clone.find(".card .card-block .card-title").text(v.name);
                    clone.find(".card-block a").attr("href",v.linkToProject);
                    
@@ -163,51 +161,35 @@
               <i class="devicons devicons-jquery"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-sass"></i>
+              <i class="devicons devicons-cplusplus"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-less"></i>
+              <i class="devicons devicons-chrome"></i>
             </li>
             <li class="list-inline-item">
               <i class="devicons devicons-bootstrap"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-wordpress"></i>
+              <i class="devicons devicons-python"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-grunt"></i>
+              <i class="devicons devicons-java"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-gulp"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"></i>
+              <i class="devicons devicons-linux"></i>
             </li>
           </ul>
 
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Mobile-First, Responsive Design</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Browser Testing &amp; Debugging</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Agile Development &amp; Scrum</li>
-          </ul>
+        
         </div>
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
         <div class="my-auto">
           <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skiier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the front-end web development world.</p>
+          <p>I like playing ball games. I can play nearly all ball games. I also enjoy set down to play card games that also let me think of the stragety I need to use.</p>
+
+          <p class="mb-0">I follow a number of animes and like to go to different kinds of concert, sometimes I also like learn some music instrument myself.</p>
         </div>
       </section>
 
