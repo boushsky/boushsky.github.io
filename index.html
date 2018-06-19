@@ -21,8 +21,15 @@
     <link href="./vendor/devicons/css/devicons.min.css" rel="stylesheet">
     <link href="./vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+
     <!-- Custom styles for this template -->
     <link href="./css/resume.min.css" rel="stylesheet">
+    <style>
+      .hidden{display:none;}
+    </style>
 
   </head>
 
@@ -64,22 +71,14 @@
             <span class="text-primary">Wang</span>
           </h1>
           <div class="subheading mb-5">(847)770-7948</br> 
-            <a href="mailto:name@email.com">xwang246@uic.edu</a>
+            <a href="mailto:name@email.com">boushsky@gmail.com</a>
           </div>
-          <p class="mb-5">I am Senior student in UIC major in Math and Computer science. This contains all the project in IT202 class</p>
+          <p1 class="mb-5">I am newly graduate UIC student major in Math and Computer Science, currently seeking for Tech job.</p1>
+          <p2 class="mb-5">Known for outstanding communication skills and love to work with people.  Proven problem solver with strong analytical and programming skill.</p2>
           <ul class="list-inline list-social-icons mb-0">
+
             <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.linkedin.com/in/frank-xuchen-wang-531588138/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -87,7 +86,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/boushsky">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -100,11 +99,11 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
         <div class="my-auto">
-          <h2 class="mb-5">Projects</h2>
+          <h2 class="mb-5">HTML/CSS Projects</h2>
 
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
-	<div class="row">
+	<div id="projectStuff" class="row">
 		<div id="template" class="col-lg-3 col-sm-3 hidden">
 
           <div class="card">
@@ -112,27 +111,14 @@
             <div class="card-block">
                 <h4 class="card-title">Special title treatment</h4>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go to Project</a>
+                <a href="#" class="btn btn-primary">Project link</a>
+                
+                
             </div>
           </div>
 
       </div>
-        <script>
-            $.get("project_data.js",function(response){
-               var userData = response.results;
-               console.log(userData);
-               $.each(userData,function(i,v){
-                   var clone = $("#template").clone();
-                   
-                   clone.find(".card .card-block .card-title").text(v.name);
-                   clone.find(".card-block a").attr("href",v.linkToProject);
-                   
-                   clone.removeClass("hidden");
-                   //clone.attr("id",v.cell);
-                   $("body").append(clone);
-               });
-            });
-        </script>
+       
 	</div>
 </div>
 
@@ -197,10 +183,15 @@
 
     </div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="./vendor/jquery/jquery.min.js"></script>
-    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <!-- Plugin JavaScript -->
     <script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
 
@@ -209,6 +200,23 @@
 
     <!-- import project data js file -->
     <script src="./project_data.js"></script>
+
+ <script>
+               $.each(projects,function(i,v){
+               
+                   var clone = $("#template").clone();
+                   clone.find(".card .card-header").text(v.name);
+                   clone.find(".card .card-block .card-title").text(v.project_name);
+                   clone.find(".card .card-block .card-text").text(v.descript);
+                   clone.find(".card-block a").attr("href",v.linkToProject);
+                   clone.find(".card-block a").attr("href",v.linkToRepo);
+                   
+                   clone.removeClass("hidden");
+                   clone.attr("id",v.name);
+                   $("#projectStuff").append(clone);
+               });
+        </script>
+
 
   </body>
 
